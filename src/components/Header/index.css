@@ -1,0 +1,109 @@
+/* index.css */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(7,48,147);
+    background: linear-gradient(90deg, rgba(7,48,147,1) 28%, rgba(0,212,255,1) 100%);
+    color: white;
+    padding: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.navbar-heading {
+    font-size: 24px;
+    margin: 0;
+    animation: slideInFromLeft 1s ease-in-out;
+}
+
+.navbar-list-container {
+    list-style-type: none;
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.navbar-list {
+    text-decoration: none;
+    color: white;
+    margin-right: 15px;
+    border: 1px solid black;
+    padding: 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: slideInFromRight 1s ease-in-out;
+}
+
+.navbar-list:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.register-navbar {
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    border: 1px solid black;
+    padding: 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: slideInFromRight 1s ease-in-out;
+}
+
+.register-navbar:hover {
+    background-color: #ffd700;
+    color: #fff;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .navbar-container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    .navbar-heading {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .navbar-list-container {
+        flex-direction: column; /* Stack links vertically */
+        margin-top: 0;
+    }
+
+    .navbar-list,
+    .register-navbar {
+        margin-bottom: 10px;
+        margin-right: 0; /* Remove right margin */
+        padding: 8px 12px; /* Adjust padding for mobile */
+        font-size: 14px;
+    }
+
+    .register-navbar {
+        color: black; /* Ensure register links are visible on mobile */
+    }
+}
